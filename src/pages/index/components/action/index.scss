@@ -24,40 +24,38 @@
     }
   }
 }
-.dialog{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  .modalItem {
-    padding: 24px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 24%;
-    margin-top: 15px;
-    .img {
-      width: 84px;
-      height: 84px;
-    }
-    .name {
-      font-size: 24px;
-    }
-    &:not(:nth-child(4n)) {
-      margin-right: calc(4% / 3);
-    }
-  }
-}
-.adm-center-popup-body {
-  padding-top: 0!important;
-}
-.adm-dialog-title{
-  padding: 0;
-  .dialogTitle{
+.dialog {
+  background-color: #fff;
+  .dialogTitle {
+    text-align: center;
     height: 80px;
     line-height: 80px;
     color: #fff;
     background-color: #000;
+  }
+  .dialogContent {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .modalItem {
+      padding: 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 24%;
+      margin-top: 15px;
+      .img {
+        width: 84px;
+        height: 84px;
+      }
+      .name {
+        font-size: 24px;
+      }
+      &:not(:nth-child(4n)) {
+        margin-right: calc(4% / 3);
+      }
     }
+  }
 }

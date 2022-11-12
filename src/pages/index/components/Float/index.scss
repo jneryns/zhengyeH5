@@ -1,0 +1,56 @@
+.yc-float {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  &__mask {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    position: fixed;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 300ms cubic-bezier(0.36, 0.66, 0.04, 1);
+  }
+
+  &__content {
+    opacity: 1;
+    z-index: 1000;
+    width: 75%;
+    max-width: 75%;
+    min-height: 100px;
+    -webkit-overflow-scrolling: touch;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+    margin-top: 112px;
+    z-index: 1000;
+  }
+}
+
+@keyframes anim-show {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-hide {
+  100% {
+    opacity: 0;
+  }
+}

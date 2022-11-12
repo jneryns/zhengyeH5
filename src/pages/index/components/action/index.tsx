@@ -1,22 +1,25 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { Dialog } from "antd-mobile";
+// import { Dialog } from "antd-mobile";
 import Taro from "@tarojs/taro";
 import { View, ViewProps, Image } from "@tarojs/components";
 import { actionList } from "./constant";
+import Float from "../Float";
 import "./index.scss";
 
 type Props = ViewProps & {};
-const Title = () => <View className="dialogTitle">功能B</View>;
 
 const Content = () => (
   <View className="dialog">
-    {actionList.map((item) => (
-      <View className="modalItem" key={item.id}>
-        <Image src={item?.img} className="img" mode="aspectFit" />
-        <View className="name">{item?.name}</View>
-      </View>
-    ))}
+    <View className="dialogTitle">功能B</View>
+    <View className="dialogContent">
+      {actionList.map((item) => (
+        <View className="modalItem" key={item.id}>
+          <Image src={item?.img} className="img" mode="aspectFit" />
+          <View className="name">{item?.name}</View>
+        </View>
+      ))}
+    </View>
   </View>
 );
 const Action = (props: Props) => {
@@ -46,15 +49,8 @@ const Action = (props: Props) => {
           </View>
         ))}
       </View>
-      <Dialog
-        visible={isShowB}
-        closeOnMaskClick
-        onClose={() => {
-          setShowB(false);
-        }}
-        title={Title()}
-        content={Content()}
-      />
+
+      <Float visible={isShowB} onClose={()=>setShowB(false)}>{Content()}</Float>
     </>
   );
 };
